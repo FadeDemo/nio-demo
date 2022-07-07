@@ -10,6 +10,7 @@
     <modules>
         <module>jdk-nio</module>
         <module>tomcat-nio</module>
+        <module>netty-nio</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -17,6 +18,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <spring.boot.version>2.6.7</spring.boot.version>
+        <netty.version>4.1.78.Final</netty.version>
+        <sl4j.version>1.7.32</sl4j.version>
     </properties>
 
     <dependencyManagement>
@@ -25,6 +28,18 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${sl4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
